@@ -10,9 +10,12 @@ gem 'sinatra-contrib'
 gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
 
+gem 'httparty'
+gem 'dotenv'
 gem 'rake'
 gem 'pry'
 gem 'shotgun', '~>0.9.1'
+gem 'awesome_print'
 
 group :test do
   gem 'shoulda-matchers'
