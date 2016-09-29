@@ -1,0 +1,20 @@
+<div class="row full-height">
+  <div class="index-box col-md-8 col-md-offset-2 white-bg full-height">
+
+    <!-- for login partial -->
+    <div id='formContainer'>
+    </div>
+
+    <h1>community</h1>
+    <h3> Discuss and grow interests together </h3>
+
+    <div class="categories">
+      <%@chats.each do |chat|%>
+      <form class="btn" id="relationship-btn" method="get" action="/chats/<%=chat.id%>">
+        <input class="defaultBtn" type="submit" value="<%=chat.interest%>">
+      </form>
+      <%end%>
+    </div>
+
+  </div>
+</div>
