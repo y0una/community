@@ -8,10 +8,14 @@ require 'bundler/setup' if File.exists?(ENV['BUNDLE_GEMFILE'])
 # Require gems we care about
 require 'rubygems'
 
+require 'twilio-ruby'
+require 'envyable'
 require 'uri'
 require 'pathname'
 require 'awesome_print'
 require 'dotenv'
+# require 'sinatra/json'
+
 Dotenv.load
 
 require 'httparty'

@@ -1,10 +1,68 @@
+$(document).ready(function() {
+// top-right
+  loginListener();
+  registerListener();
+});
+
+var loginListener = function (){
+  $('.top-bar-login').on('click', function(e){
+    e.preventDefault();
+    // toggle display element in CSS for login
+    // if exists on pg then hide. If hidden then show
+    $("#formContainer").toggle();
+
+
+    var request = $.ajax({
+      url: '/sessions/new',
+      type: 'get'
+    })
+
+    request.done(function(response){
+      // clears out form if there is 1 already
+      $("#formContainer").empty().append(response);
+    })
+  })
+}
+
+var registerListener = function (){
+  $('.top-bar-register').on('click', function(e){
+    e.preventDefault();
+    // toggle display element in CSS for login
+    // if exists on pg then hide. If hidden then show
+    $("#formContainer").toggle();
+
+
+    var request = $.ajax({
+      url: '/users/new',
+      type: 'get'
+    })
+
+    request.done(function(response){
+      // clears out form if there is 1 already
+      // $("#formContainer").empty().append(response);
+      $("#formContainer").empty().append(response);
+    })
+  })
+}
+
+
+
+
 function printMessage(message) {
   $('#messages').append(message + "<br>");
 }
 
 $(function() {
-    // define variables for the channel and username
+    // Manages state of access token we got from server
+    var accessManager;
+
+    // Interface to IP messaging service
+    var messagingClient;
+
+    // Handle to chatChannel
     var chatChannel;
+
+    // Server assigns client random username - store value here
     var username;
 
     function setupChannel() {
@@ -30,8 +88,14 @@ $(function() {
      });
 
     $.post("/tokens", function(data) {
-      username = data.username;
+      data = JSON.parse(data);
+
+      console.log("data:" + data);
+      console.log("data token:" + data["token"]);
+      username = data["username"];
+      console.log("username:" + username);
       var accessManager = new Twilio.AccessManager(data.token);
+      console.log(accessManager);
       var messagingClient = new Twilio.IPMessaging.Client(accessManager);
 
       // do it 5 times. create 5 diff channel and save

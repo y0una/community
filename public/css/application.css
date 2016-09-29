@@ -1,0 +1,140 @@
+html, body{
+  height: 100%;
+  margin: 0;
+  background-color: #DDE8E8;
+  font-family: 'Rubik', sans-serif;
+}
+
+.full-height {
+  height: 100%;
+}
+
+/*toggles LOGIN display none and block*/
+#formContainer{
+  display: none;
+}
+
+.white-bg {
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+}
+
+#nav-bar{
+  position: absolute;
+  top: 0;
+  right: 0;
+  /*border: 2px solid blue;*/
+  width: 100%;
+  height: 50px;
+  z-index: 200;
+}
+
+.top-right{
+  padding-top: 10px;
+  /*border: 2px solid blue;*/
+  text-align: right;
+}
+.top-bar{
+  display: inline;
+  padding: 0px 7px;
+  text-transform: uppercase;
+  font-size: 13px;
+  letter-spacing: 1px;
+  font-weight: 300px;
+  color: #7B7B7B;
+}
+
+.top-bar:hover{
+  text-decoration: none
+}
+
+#logout{
+  font-family: "Verdana" sans-serif;
+  font-size: 1em;
+  /*text-align: right;*/
+  color: blue;
+  background: none;
+  margin: 0;
+  padding: 0;
+  border: none;
+  cursor: pointer;
+  /*float: right;*/
+  padding-right: 15px;
+}
+
+#first-name{
+  text-decoration: none;
+}
+
+error{
+  color:pink;
+}
+
+.btn {
+  padding: 16px 6px;
+  color: white;
+  margin-bottom: 50px;
+  display: block;
+  width: 36%;
+  margin: auto;
+  margin-top:.8em;
+  border-radius: 3px;
+}
+
+.defaultBtn{
+  background: none;
+  border: none;
+  text-decoration: none;
+  letter-spacing: 1.1px;
+
+}
+
+h1{
+  font-size: 42px;
+  font-family: 'Rubik', sans-serif;
+  font-weight: 500;
+  text-align: center;
+  padding-top: 20px;
+  color: #4A4A4A;
+  letter-spacing: .2px;
+  margin: 0 auto;
+  width: 300px;
+  height:60px;
+  transition:all .2s ease-out;
+}
+
+h3{
+  color: #7B7B7B;
+  text-align: center;
+  letter-spacing: .7px;
+  font-family: 'Rubik', sans-serif;
+  font-size: 13px;
+  padding-bottom: 25px;
+  font-weight: 300;
+  margin-top: 25px;
+  margin-bottom: 30px;
+}
+#relationship-btn{
+  transition:all 0.15s ease-out;
+  background-color: #4F79BD;
+  text-decoration: none;
+  font-size: 16px;
+  text-align:center;
+}
+
+.col-lg-9{
+  width: 80%;
+  background-color: white;
+  vertical-align: center;
+  min-height: 100vh;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.25);
+
+}
+
+/* Move to index.css later */
+.index-box {
+  z-index: 1;
+  position: relative;
+  padding-top: 50px;
+}
+

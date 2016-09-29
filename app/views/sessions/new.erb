@@ -1,0 +1,9 @@
+<h1>Login</h1>
+
+<error><%= @errors if @errors %></error>
+
+<form method="post" action="/login">
+  Email: <input type="text" name="email" placeholder="Email"></br></br>
+  Password: <input type="password" name="password" placeholder="Password"></br></br>
+  <input type="submit" value="Login">
+</form>

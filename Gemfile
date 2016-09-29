@@ -6,10 +6,14 @@ gem 'pg'
 # Sinatra driver
 gem 'sinatra', '~> 1.0'
 gem 'sinatra-contrib'
+# gem 'sinatra/json'
 
 gem 'activesupport', '~>4.2.0'
 gem 'activerecord', '~>4.2.0'
 
+gem 'twilio-ruby'
+gem 'envyable'
+gem 'bcrypt'
 gem 'httparty'
 gem 'dotenv'
 gem 'rake'

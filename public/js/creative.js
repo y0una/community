@@ -29,7 +29,9 @@ $(function() {
     $input.on('keydown', function(e) {
         if (e.keyCode == 13) {
             console.log($input.val());
+            // make ajax call to send msg user entered back to server. backend setup route post messages when user clicks send msg make ajax request to send content back to route and route create message and save to db then send back response. Use.done append msg. only make sure db saves msg then send to other clients
             chatChannel.sendMessage($input.val())
+
             $input.val('');
         }
      });
@@ -37,6 +39,9 @@ $(function() {
     $.post("/tokens", function(data) {
       username = data.username;
       var accessManager = new Twilio.AccessManager(data.token);
+
+      console.log("access manager:" + accessManager);
+
       var messagingClient = new Twilio.IPMessaging.Client(accessManager);
 
       // do it 5 times. create 5 diff channel and save
