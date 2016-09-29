@@ -2,7 +2,6 @@
 # twilioBaseURL = "https://api.twilio.com/2010-04-01"
 
 get "/tokens" do
-
   get_tokens
 end
 
