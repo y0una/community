@@ -16,16 +16,21 @@ def get_tokens
 end
 
 def get_grant
+  if current_user
   grant = Twilio::Util::AccessToken::IpMessagingGrant.new
+
   grant.endpoint_id = "Community:#{current_user.user_name.gsub(" ", "_")}:browser"
   grant.service_sid = ENV['IPM_SERVICE_SID']
   grant
+  end
 end
 
 post "/tokens" do
+  if current_user
   p "It got to the create method"
   token = get_tokens
   grant = get_grant
   token.add_grant(grant)
   {username: current_user.user_name, token: token}.to_json
+  end
 end
