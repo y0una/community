@@ -8,7 +8,8 @@ Dotenv.load
 
 # CHAT DISPLAY ALL LIST
 get '/chats' do
-  @chats = Chat.all #define instance variable for view
+  # @relationship_chat = Chat.find(1)
+  # @chats = Chat.all #define instance variable for view
   erb :'index' #show all chats view (index)
 end
 
