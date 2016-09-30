@@ -24,18 +24,19 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 col-md-offset-2">
-          <div class="top-right">
+          <div class="top-right gray">
             <%unless current_user %>
             <a class="top-bar-login" class="login-register" href = '/sessions/new'>Login</a>
             <a class="top-bar-register" class="login-register" href = '/users/new'>Register</a>
             <%else%>
 
+            <a class="top-bar" href="/">Home</a>
 
             <a class="top-bar" id="first-name" href="/users/<%=current_user.id%>"> <%=current_user.first_name%> </a>
 
             <form class="top-bar" method="post" action="/logout">
               <input type = "hidden" name="_method" value="delete">
-              <input id="logout" type="submit" value="Logout">
+              <input  id="logout" type="submit" value="Logout">
             </form>
 
             <%end%>

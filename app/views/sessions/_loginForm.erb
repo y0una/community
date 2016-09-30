@@ -1,9 +1,11 @@
-<h2>Login</h2>
+<div class="centerForm">
+  <h4>Login</h4>
 
-<error><%= @errors if @errors %></error>
+  <error><%= @errors if @errors %></error>
 
-<form method="post" action="/login">
-  Email: <input type="text" name="email" placeholder="Email"></br></br>
-  Password: <input type="password" name="password" placeholder="Password"></br></br>
-  <input type="submit" value="Login">
-</form>
+  <form autocomplete="off" method="post" action="/login">
+    <input autocomplete="off" class="formField" type="text" name="email" placeholder="Email"></br>
+    <input autocomplete="off" class="formField" type="password" name="password" placeholder="Password"></br>
+    <input class="smallBtn" type="submit" value="Login">
+  </form>
+</div>
