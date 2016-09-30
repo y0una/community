@@ -14,25 +14,23 @@ end
 
 # GENERATE TOKEN FOR USE IN IP MSGING APP
 post '/tokens' do
-  unless current_user
-  redirect '/'
-  else
-  token = get_token
-  # Create an Access Token for IP messaging usage
-  # token = Twilio::Util::AccessToken.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_API_KEY'], ENV['TWILIO_API_SECRET'], 3600
-
-  grant = get_grant
-  # Create IP Messaging grant for our token
-  # grant = Twilio::Util::AccessToken::IpMessagingGrant.new
-  # grant.endpoint_id = "Chatty:#{current_user.name.gsub(" ", "_")}:browser"
-  # grant.service_sid = ENV['IPM_SERVICE_SID']
   if current_user
-  token.add_grant grant
-  end
-  # Generate token and send to client
-  # json
-  {:token => token.to_jwt, :username => current_user.user_name }.to_json
-  # json :identity => identity, :token => token.to_jwt
+    token = get_token
+    # Create an Access Token for IP messaging usage
+    # token = Twilio::Util::AccessToken.new ENV['TWILIO_ACCOUNT_SID'], ENV['TWILIO_API_KEY'], ENV['TWILIO_API_SECRET'], 3600
+
+    grant = get_grant
+    # Create IP Messaging grant for our token
+    # grant = Twilio::Util::AccessToken::IpMessagingGrant.new
+    # grant.endpoint_id = "Chatty:#{current_user.name.gsub(" ", "_")}:browser"
+    # grant.service_sid = ENV['IPM_SERVICE_SID']
+    token.add_grant grant
+    # Generate token and send to client
+    # json
+    {:token => token.to_jwt, :username => current_user.user_name }.to_json
+    # json :identity => identity, :token => token.to_jwt
+  else
+   redirect "/"
   end
 
 end
